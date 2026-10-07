@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: fhir-api
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: fhir-api

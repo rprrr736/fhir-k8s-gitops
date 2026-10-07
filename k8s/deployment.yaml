@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fhir-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fhir-api
+  template:
+    metadata:
+      labels:
+        app: fhir-api
+    spec:
+      containers:
+        - name: fhir-api
+          image: ghcr.io/rprrr736/fhir-k8s-gitops:v1
+          ports:
+            - containerPort: 3000
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 3000
+            initialDelaySeconds: 3
+            periodSeconds: 5

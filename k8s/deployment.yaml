@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: fhir-api
-          image: ghcr.io/rprrr736/fhir-k8s-gitops:c4536c5
+          image: ghcr.io/rprrr736/fhir-k8s-gitops:1f29022
           ports:
             - containerPort: 3000
           readinessProbe:

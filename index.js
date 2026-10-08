@@ -36,7 +36,7 @@ app.get("/health", (req, res) => {
 });
 
 app.get("/hello", (req, res) => {
-  res.json({ message: "Hello from Kubernetes v5" });
+  res.json({ message: "Hello from Kubernetes, auto-deployed" });
 });
 
 app.get("/patients", async (req, res) => {
